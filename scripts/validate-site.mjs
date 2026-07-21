@@ -2,6 +2,8 @@ import { readFileSync, existsSync } from "node:fs";
 
 const html = readFileSync("src/index.html", "utf8");
 const css = readFileSync("src/styles.css", "utf8");
+const js = readFileSync("src/main.js", "utf8");
+const source = `${html}\n${css}\n${js}`;
 const cssExists = existsSync("src/styles.css");
 const jsExists = existsSync("src/main.js");
 
@@ -53,6 +55,15 @@ for (const legacyToken of ["--green-900", "--green-800", "--green-700", "--green
 }
 for (const requiredToken of ["--red: #e8333b", "--ink: #14171f", "--paper: #fafaf8", "--whatsapp: #25d366"]) {
   if (!css.toLowerCase().includes(requiredToken)) failures.push(`Missing brand color token: ${requiredToken}`);
+}
+
+for (const menuArtifact of ["data-menu-toggle", "menu-toggle", "menu-open", "is-open"]) {
+  if (source.includes(menuArtifact)) failures.push(`Mobile menu artifact remains: ${menuArtifact}`);
+}
+
+const mobileGallery = css.slice(css.lastIndexOf("@media (max-width: 680px)"));
+if (!/\.gallery img\s*\{[\s\S]*?height:\s*min\(66vw,\s*280px\)/.test(mobileGallery)) {
+  failures.push("Mobile gallery images must use an explicit compact responsive height");
 }
 
 if (failures.length) {

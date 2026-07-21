@@ -1,17 +1,7 @@
 const commercialWhatsapp = "5531996848477";
 
 const header = document.querySelector("[data-site-header]");
-const menuToggle = document.querySelector("[data-menu-toggle]");
-const mainNav = document.querySelector("[data-main-nav]");
 const whatsappForm = document.querySelector("[data-whatsapp-form]");
-
-function setMenu(open) {
-  if (!header || !menuToggle) return;
-
-  document.body.classList.toggle("menu-open", open);
-  header.classList.toggle("is-open", open);
-  menuToggle.setAttribute("aria-expanded", String(open));
-}
 
 function updateHeaderState() {
   if (!header) return;
@@ -72,24 +62,6 @@ function buildWhatsappMessage(form) {
     `Mensagem: ${detalhes}`
   ].join("\n");
 }
-
-menuToggle?.addEventListener("click", () => {
-  const open = menuToggle.getAttribute("aria-expanded") !== "true";
-  setMenu(open);
-});
-
-mainNav?.addEventListener("click", (event) => {
-  const target = event.target;
-  if (target instanceof HTMLAnchorElement) {
-    setMenu(false);
-  }
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    setMenu(false);
-  }
-});
 
 window.addEventListener("scroll", updateHeaderState, { passive: true });
 updateHeaderState();
