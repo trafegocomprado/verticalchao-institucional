@@ -1,17 +1,17 @@
 :root {
-  --green-900: #123f2f;
-  --green-800: #17583f;
-  --green-700: #19724f;
-  --green-100: #dcefe4;
-  --orange-600: #f07a22;
-  --orange-500: #ff8a2a;
-  --cream-100: #f7f3e9;
-  --paper: #fffaf1;
-  --ink: #18251f;
-  --muted: #5e6b62;
-  --line: rgba(24, 37, 31, 0.14);
-  --white-soft: #fffdf7;
-  --shadow: 0 24px 70px rgba(18, 63, 47, 0.18);
+  --red: #e8333b;
+  --red-dark: #c41f27;
+  --red-soft: #ffd7d4;
+  --paper: #fafaf8;
+  --paper-2: #f4f1eb;
+  --ink: #14171f;
+  --ink-soft: #242834;
+  --muted: #5b606c;
+  --line: #e4e1db;
+  --white-soft: #ffffff;
+  --whatsapp: #25d366;
+  --whatsapp-dark: #1da851;
+  --shadow: 0 24px 70px rgba(20, 23, 31, 0.18);
   --font-display: Georgia, "Times New Roman", serif;
   --font-body: "Trebuchet MS", Verdana, sans-serif;
   --header-height: 78px;
@@ -31,7 +31,7 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    linear-gradient(90deg, rgba(18, 63, 47, 0.04) 1px, transparent 1px) 0 0 / 44px 44px,
+    linear-gradient(90deg, rgba(20, 23, 31, 0.035) 1px, transparent 1px) 0 0 / 44px 44px,
     var(--paper);
   font-family: var(--font-body);
   font-size: 16px;
@@ -58,7 +58,7 @@ a {
 }
 
 a:hover {
-  color: var(--orange-600);
+  color: var(--red-dark);
 }
 
 button,
@@ -74,7 +74,7 @@ section[id],
 }
 
 :focus-visible {
-  outline: 3px solid var(--orange-500);
+  outline: 3px solid var(--red);
   outline-offset: 4px;
 }
 
@@ -96,8 +96,8 @@ section[id],
   left: 12px;
   z-index: 30;
   transform: translateY(-150%);
-  background: var(--orange-500);
-  color: var(--ink);
+  background: var(--red);
+  color: var(--white-soft);
   padding: 10px 14px;
   border-radius: 4px;
   font-weight: 700;
@@ -124,8 +124,8 @@ section[id],
 .site-header.is-scrolled,
 .site-header.is-open {
   color: var(--ink);
-  background: rgba(255, 250, 241, 0.94);
-  box-shadow: 0 14px 44px rgba(18, 63, 47, 0.12);
+  background: rgba(250, 250, 248, 0.94);
+  box-shadow: 0 14px 44px rgba(20, 23, 31, 0.12);
   backdrop-filter: blur(12px);
 }
 
@@ -154,16 +154,11 @@ section[id],
   text-transform: uppercase;
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
+.brand-logo {
   width: 44px;
   height: 44px;
-  background: var(--orange-500);
-  color: var(--green-900);
-  border: 2px solid rgba(255, 255, 255, 0.45);
-  border-radius: 50%;
-  font-weight: 900;
+  flex: none;
+  object-fit: contain;
 }
 
 .main-nav {
@@ -196,21 +191,21 @@ section[id],
   align-items: center;
   justify-content: center;
   padding: 13px 20px;
-  border: 2px solid var(--orange-500);
+  border: 2px solid var(--red);
   border-radius: 4px;
-  background: var(--orange-500);
-  color: var(--green-900);
+  background: var(--red);
+  color: var(--white-soft);
   font-weight: 900;
   text-decoration: none;
-  box-shadow: 0 12px 24px rgba(240, 122, 34, 0.26);
+  box-shadow: 0 12px 24px rgba(232, 51, 59, 0.26);
   transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
 }
 
 .button:hover {
-  color: var(--green-900);
-  background: #ff9b43;
+  color: var(--white-soft);
+  background: var(--red-dark);
   transform: translateY(-2px);
-  box-shadow: 0 16px 34px rgba(240, 122, 34, 0.32);
+  box-shadow: 0 16px 34px rgba(232, 51, 59, 0.32);
 }
 
 .button--small {
@@ -227,7 +222,7 @@ section[id],
 }
 
 .button--ghost:hover {
-  color: var(--green-900);
+  color: var(--ink);
   background: var(--white-soft);
 }
 
@@ -271,14 +266,14 @@ section[id],
   align-items: end;
   overflow: hidden;
   color: var(--white-soft);
-  background: var(--green-900);
+  background: var(--ink);
 }
 
 .hero::after {
   position: absolute;
   inset: auto 0 0;
   height: 22vh;
-  background: linear-gradient(to top, rgba(18, 63, 47, 0.88), transparent);
+  background: linear-gradient(to top, rgba(20, 23, 31, 0.88), transparent);
   content: "";
 }
 
@@ -296,7 +291,7 @@ section[id],
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(18, 63, 47, 0.92) 0%, rgba(18, 63, 47, 0.72) 42%, rgba(18, 63, 47, 0.18) 100%),
+    linear-gradient(90deg, rgba(20, 23, 31, 0.92) 0%, rgba(20, 23, 31, 0.72) 42%, rgba(20, 23, 31, 0.18) 100%),
     linear-gradient(0deg, rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.1));
   pointer-events: none;
 }
@@ -313,7 +308,7 @@ section[id],
 .eyebrow,
 .section__kicker {
   margin: 0 0 14px;
-  color: var(--orange-500);
+  color: var(--red);
   font-size: 0.78rem;
   font-weight: 900;
   letter-spacing: 0.14em;
@@ -353,7 +348,7 @@ section[id],
   align-items: center;
   gap: 8px;
   padding: 8px 12px;
-  border-left: 3px solid var(--orange-500);
+  border-left: 3px solid var(--red);
   background: rgba(255, 253, 247, 0.12);
   backdrop-filter: blur(6px);
 }
@@ -374,7 +369,7 @@ section[id],
   z-index: 2;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  background: var(--green-900);
+  background: var(--ink);
   color: var(--white-soft);
   border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
@@ -386,7 +381,7 @@ section[id],
 }
 
 .trust-strip span {
-  color: var(--orange-500);
+  color: var(--red);
   font-weight: 900;
 }
 
@@ -439,7 +434,7 @@ section[id],
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 4.8rem);
   line-height: 0.98;
-  color: var(--green-900);
+  color: var(--ink);
   text-wrap: balance;
 }
 
@@ -471,7 +466,7 @@ section[id],
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 5vw, 4rem);
   line-height: 1;
-  color: var(--orange-600);
+  color: var(--red-dark);
 }
 
 .metrics dd {
@@ -502,7 +497,7 @@ section[id],
   padding: clamp(20px, 3vw, 30px);
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: rgba(255, 250, 241, 0.72);
+  background: rgba(250, 250, 248, 0.72);
   transition: background-color 180ms ease, transform 180ms ease;
 }
 
@@ -514,7 +509,7 @@ section[id],
 .service-grid h3 {
   margin: 0 0 12px;
   font-size: 1.1rem;
-  color: var(--green-800);
+  color: var(--ink-soft);
 }
 
 .service-grid p {
@@ -523,7 +518,7 @@ section[id],
 }
 
 .feature-stack {
-  background: var(--green-900);
+  background: var(--ink);
   color: var(--white-soft);
 }
 
@@ -568,7 +563,7 @@ section[id],
   min-height: 44px;
   align-items: center;
   margin-top: 12px;
-  color: var(--orange-500);
+  color: var(--red);
   font-weight: 900;
 }
 
@@ -599,7 +594,7 @@ section[id],
 }
 
 .testimonials {
-  background: var(--green-100);
+  background: var(--red-soft);
 }
 
 .testimonials > h2,
@@ -621,8 +616,8 @@ blockquote {
   margin: 0;
   padding: clamp(22px, 3vw, 34px);
   background: var(--white-soft);
-  border-top: 4px solid var(--orange-500);
-  box-shadow: 0 18px 40px rgba(18, 63, 47, 0.1);
+  border-top: 4px solid var(--red);
+  box-shadow: 0 18px 40px rgba(20, 23, 31, 0.1);
 }
 
 blockquote p {
@@ -631,7 +626,7 @@ blockquote p {
 }
 
 blockquote cite {
-  color: var(--green-800);
+  color: var(--ink-soft);
   font-style: normal;
   font-weight: 900;
 }
@@ -659,7 +654,7 @@ blockquote cite {
   padding: 9px 12px;
   border: 1px solid var(--line);
   border-radius: 4px;
-  color: var(--green-800);
+  color: var(--ink-soft);
   font-weight: 900;
   text-decoration: none;
 }
@@ -679,7 +674,7 @@ blockquote cite {
 .field label {
   display: block;
   margin-bottom: 7px;
-  color: var(--green-900);
+  color: var(--ink);
   font-weight: 900;
 }
 
@@ -691,7 +686,7 @@ blockquote cite {
   padding: 12px;
   color: var(--ink);
   background: var(--white-soft);
-  border: 1px solid rgba(24, 37, 31, 0.28);
+  border: 1px solid rgba(20, 23, 31, 0.28);
   border-radius: 4px;
 }
 
@@ -720,7 +715,7 @@ blockquote cite {
   gap: clamp(26px, 5vw, 70px);
   padding: clamp(50px, 7vw, 86px) clamp(18px, 5vw, 72px);
   color: var(--white-soft);
-  background: var(--green-900);
+  background: var(--ink);
 }
 
 .site-footer h2 {
@@ -753,10 +748,10 @@ blockquote cite {
   align-items: center;
   gap: 10px;
   padding: 12px 16px;
-  color: var(--green-900);
-  background: var(--orange-500);
+  color: #0b2b17;
+  background: var(--whatsapp);
   border-radius: 999px;
-  box-shadow: 0 16px 34px rgba(18, 63, 47, 0.25);
+  box-shadow: 0 16px 34px rgba(20, 23, 31, 0.25);
   font-weight: 900;
   text-decoration: none;
 }
@@ -767,7 +762,7 @@ blockquote cite {
   width: 30px;
   height: 30px;
   color: var(--white-soft);
-  background: var(--green-800);
+  background: var(--whatsapp-dark);
   border-radius: 50%;
 }
 
@@ -798,9 +793,9 @@ blockquote cite {
     position: fixed;
     top: 11px;
     right: 16px;
-    color: var(--green-900);
-    background: var(--orange-500);
-    border-color: var(--orange-500);
+    color: var(--white-soft);
+    background: var(--red);
+    border-color: var(--red);
   }
 
   .site-header.is-open .main-nav,
@@ -877,7 +872,7 @@ blockquote cite {
 
   .hero__shade {
     background:
-      linear-gradient(90deg, rgba(18, 63, 47, 0.94), rgba(18, 63, 47, 0.62)),
+      linear-gradient(90deg, rgba(20, 23, 31, 0.94), rgba(20, 23, 31, 0.62)),
       linear-gradient(0deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.08));
   }
 
