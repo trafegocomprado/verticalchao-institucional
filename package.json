@@ -4,9 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test": "node --test scripts/*.test.mjs",
     "build": "node scripts/build.mjs",
     "validate": "node scripts/validate-site.mjs && node scripts/check-links.mjs",
-    "check": "npm run build && npm run validate",
+    "check": "npm run test && npm run build && npm run validate",
     "preview": "npx http-server dist -p 4173 -c-1"
   },
   "devDependencies": {

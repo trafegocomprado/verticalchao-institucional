@@ -44,7 +44,10 @@ if (!existsSync("src/assets/apple-touch-icon.png")) failures.push("Missing Apple
 if (!html.includes('<meta name="description"')) failures.push("Missing meta description");
 if (!html.includes("application/ld+json")) failures.push("Missing JSON-LD schema");
 if (!html.includes('id="orcamento"')) failures.push("Missing quote/contact section");
-if (!html.includes("data-whatsapp-form")) failures.push("Missing WhatsApp form hook");
+if (!html.includes("data-contact-form")) failures.push("Missing email contact form hook");
+for (const contactAsset of ["src/contact-config.js", "src/contact-form.js"]) {
+  if (!existsSync(contactAsset)) failures.push(`Missing email contact asset: ${contactAsset}`);
+}
 if (!html.includes('<meta name="theme-color" content="#14171f">')) failures.push("Theme color must match the graphite brand token");
 if (!html.includes('href="./assets/favicon-32.png"')) failures.push("Missing favicon link");
 if (!html.includes('href="./assets/apple-touch-icon.png"')) failures.push("Missing Apple touch icon link");
@@ -62,9 +65,13 @@ for (const menuArtifact of ["data-menu-toggle", "menu-toggle", "menu-open", "is-
 }
 
 const mobileGallery = css.slice(css.lastIndexOf("@media (max-width: 680px)"));
-if (!/\.gallery img\s*\{[\s\S]*?height:\s*min\(66vw,\s*280px\)/.test(mobileGallery)) {
-  failures.push("Mobile gallery images must use an explicit compact responsive height");
+if (!/\.gallery\s*\{\s*grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/.test(mobileGallery) || !/\.gallery img\s*\{[^}]*aspect-ratio:\s*1;/.test(css)) {
+  failures.push("Gallery thumbnails must remain square in two columns on mobile");
 }
+
+if ((html.match(/data-gallery-link/g) ?? []).length < 8) failures.push("Gallery must include at least eight expandable photos");
+if (!html.includes('data-gallery-dialog') || !existsSync('src/gallery.js')) failures.push("Missing gallery lightbox");
+if (!html.includes('Registro: 141201165-5') || html.includes('CFT/BR:')) failures.push("Technical registration label must read Registro");
 
 if (failures.length) {
   console.error(failures.join("\n"));
