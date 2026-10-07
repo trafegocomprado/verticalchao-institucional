@@ -24,9 +24,9 @@ As fotos de limpeza de vidros e de EcoGranito vieram das páginas públicas da p
 
 ## Contatos obrigatórios
 
-- Principal: `(31) 99684-8477` / `tel:+5531996848477`
-- WhatsApp: `https://api.whatsapp.com/send?phone=5531996848477&text=Ol%C3%A1,%20preciso%20de%20um%20atendimento!`
-- Rodapé secundário: `(31) 98712-2106`
+- Principal: `(31) 93301-1440` / `tel:+5531933011440`
+- WhatsApp: `https://api.whatsapp.com/send?phone=5531933011440&text=Ol%C3%A1,%20preciso%20de%20um%20atendimento!`
+- Engenharia Ademar (rodapé): `(31) 98712-2106`
 - Removido: qualquer uso público do número comercial antigo substituído neste projeto.
 
 ## Comandos

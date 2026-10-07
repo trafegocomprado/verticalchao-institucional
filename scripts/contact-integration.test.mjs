@@ -26,5 +26,5 @@ test('contact config loads before the client and the old form handler is removed
   assert.doesNotMatch(main, /addEventListener\(["']submit/);
   assert.doesNotMatch(main, /form_submitted/);
   assert.doesNotMatch(html, /data-whatsapp-form|Nenhum dado fica armazenado/);
-  assert.ok(html.includes('https://api.whatsapp.com/send?phone=5531996848477'), 'Independent WhatsApp CTAs must remain');
+  assert.ok(html.includes('https://api.whatsapp.com/send?phone=5531933011440'), 'Independent WhatsApp CTAs must remain');
 });
