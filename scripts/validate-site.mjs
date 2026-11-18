@@ -28,6 +28,10 @@ const forbidden = [
 ];
 const failures = [];
 
+if ((html.match(/GTM-M7GS29F/g) ?? []).length !== 2) failures.push("GTM must occur exactly twice: one loader and one noscript");
+if (!/<body>\s*<!-- Google Tag Manager \(noscript\) -->\s*<noscript>/.test(html)) failures.push("GTM noscript must be the first body content");
+if (/googletagmanager\.com\/gtag\/js|gtag\(['"]config/.test(html)) failures.push("Google tags must be managed by GTM to prevent duplicate configuration");
+
 for (const item of required) {
   if (!html.includes(item)) failures.push(`Missing required content: ${item}`);
 }
